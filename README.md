@@ -1,25 +1,25 @@
 # PHP AJAX User Management
 
-PHP, jQuery AJAX ve MySQL ile hazırlanmış basit kullanıcı yönetim sistemi.
+A simple user management system built with PHP, jQuery AJAX, and MySQL.
 
-## Özellikler
+## Features
 
-- Kullanıcı listeleme
-- AJAX ile kullanıcı ekleme
-- AJAX ile kullanıcı silme
-- AJAX ile kullanıcı güncelleme
-- PDO ile veritabanı bağlantısı
-- Bootstrap modal form yapısı
+- List users
+- Add users via AJAX
+- Delete users via AJAX
+- Update users via AJAX
+- Database connection using PDO
+- Bootstrap modal form structure
 
-## Kurulum
+## Installation
 
-1. Projeyi XAMPP `htdocs` klasörüne alın.
+1. Place the project in the XAMPP `htdocs` directory.
 
-2. `database.sql` dosyasını phpMyAdmin üzerinden içe aktarın.
+2. Import the `database.sql` file via phpMyAdmin.
 
-3. `config.example.php` dosyasını kopyalayın ve adını `config.php` yapın.
+3. Copy the `config.example.php` file and rename it to `config.php`.
 
-4. `config.php` içindeki veritabanı bilgilerini kendi ortamınıza göre düzenleyin.
+4. Edit the database credentials in `config.php` according to your environment.
 
 ```php
 $dbHost = "127.0.0.1";
