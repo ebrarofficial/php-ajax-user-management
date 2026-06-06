@@ -1,4 +1,17 @@
-<!-- dashboard.php -->
+<?php
+    session_start();
+
+    if(!isset($_SESSION["oturum"])){
+        header("Location: login.php");
+        exit();
+    }
+
+    if(!$_SESSION["oturum"]){
+        header("Location: login.php");
+        exit();
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -14,7 +27,7 @@
     <a class="navbar-brand" href="dashboard.php">User Panel</a>
 
     <div class="ml-auto">
-        <span class="text-white mr-3">Hoş geldin, Admin</span>
+        <span class="text-white mr-3"><?php echo $_SESSION["ad"]. " ". $_SESSION["soyad"]; ?></span>
         <a href="logout.php" class="btn btn-outline-light btn-sm">Çıkış Yap</a>
     </div>
 </nav>

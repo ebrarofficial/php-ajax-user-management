@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="card-body">
-                    <form action="login.php" method="POST">
+                    <form action="kontrol/oturum_kontrol.php" id="kForm" method="POST">
                         <div class="form-group">
                             <label>Kullanıcı Adı</label>
                             <input type="text" name="kadi" class="form-control" placeholder="Kullanıcı adınızı girin">
@@ -33,16 +33,41 @@
                         <button type="submit" name="giris" class="btn btn-primary btn-block">
                             Giriş Yap
                         </button>
-
-                        <a href="register.php" class="btn btn-outline-secondary btn-block">
-                            Kayıt Ol
-                        </a>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $(document).ready(function(){        
+        $("#kForm").on("submit", function(){
+            let formData = new FormData($("#kForm")[0]);
+            $.ajax({
+                url: "kontrol/oturum_kontrol.php",
+                data: formData,
+                method: "POST",
+                processData: false,
+                contentType: false,
+                success: function(cvp){
+                    if(cvp == "OK"){
+                        window.location.href = "dashboard.php";
+                    }
+                    else{
+                        alert("Giriş başarısız! Lütfen kullanıcı adı ve şifrenizi kontrol edin.");
+                    }
+                }
+           }); 
+
+           return false;
+
+        });
+    });
+</script>
 
 </body>
 </html>
