@@ -14,13 +14,13 @@
             $_SESSION["kadi"] = $kayit["kadi"];
             $_SESSION["yetki"] = $kayit["yetki"];
 
-            echo "OK";
+            echo "<h2>Giriş başarılı! Hoş geldiniz, ". $_SESSION["ad"]. " ". $_SESSION["soyad"]. "</h2>";
         }
         else{
-            echo "NO";
+            echo "<h2>Giriş başarısız!</h2>";
         }
     }
     else{
-        echo "NO";
+        echo "<h2>Böyle bir kullanıcı bulunamadı!</h2>";
     }
 ?>
